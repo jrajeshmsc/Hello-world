@@ -13,16 +13,29 @@ pipeline {
     stage('Parallel stages') {
       parallel {
 
-        stage('Sequential nested stages') {
-          stages {
-            stage('Regression Testing') {
-              steps {
-                script {
-                  echo 'Stage 2'
+        stage('Sequential nested stages') 
+        {
+          stages 
+              {
+                  stage('Regression Testing') 
+                    {
+                     steps {
+                       script {
+                                echo 'Stage 2'
                   sh 'sleep 20'
-                }
-              }
-            }
+                              }
+                          }
+                     }
+
+                  stage('Acceptance Testing') 
+                    {
+                     steps {
+                       script {
+                                echo 'Stage 2'
+                  sh 'sleep 20'
+                              }
+                          }
+                     }
             stage('Stage 3') {
               steps {
                 script {
