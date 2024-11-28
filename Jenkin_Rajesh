@@ -10,7 +10,17 @@ pipeline {
       }
     }
 
-    stage('Parallel stages') {
+    stage('Parallel stages') 
+stage('Code Quality check') {
+          steps {
+            script {
+              echo 'Stage 4'
+              sh 'sleep 20'
+            }
+          }
+        }
+
+{
       parallel {
 
         stage('Sequential nested stages') 
@@ -40,14 +50,7 @@ pipeline {
           }
         }
 
-        stage('Stage 4') {
-          steps {
-            script {
-              echo 'Stage 4'
-              sh 'sleep 20'
-            }
-          }
-        }
+        
 
       }
     }
