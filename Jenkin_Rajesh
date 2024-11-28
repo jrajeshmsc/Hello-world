@@ -15,7 +15,7 @@ pipeline {
 
         stage('Sequential nested stages') {
           stages {
-            stage('Stage 2') {
+            stage('Regression Testing') {
               steps {
                 script {
                   echo 'Stage 2'
